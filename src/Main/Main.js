@@ -6,13 +6,15 @@ const Main = () => {
   //const [data, setData] = useState({ gaugeData: [], areaData: {} });
   const [gaugeData, setGaugeData] = useState([]);
   const [areaData, setAreaData] = useState([]);
-  const [filterState, setFilterState] = useState(false)
+  //const [filterState, setFilterState] = useState(false)
+  const [currentCard, setCard] = useState('Quality Score')
 
 
   useEffect(() => {
     getData();
   }, []);
 
+  //console.log(currentCard)
 
   const getData = async () => {
     const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change  it here
@@ -26,8 +28,8 @@ const Main = () => {
     <div>
       <h3 className="tmpMainHeader">Main component</h3>
       <div className="tmpMain">
-        <Filter data={ gaugeData } filterState={filterState} setFilterState={setFilterState}/>
-        <Chart data={ areaData }/>
+        <Filter data={ gaugeData } setCard={setCard}/>
+        <Chart data={ areaData } currentCard={currentCard} />
       </div>
     </div>
   );

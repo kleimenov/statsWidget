@@ -1,7 +1,7 @@
 import React from "react";
 
-const Chart = ({ dataElement }) => {
-
+const Chart = ({ dataElement,  currentCard }) => {
+  console.log('I am on the chart side ' +currentCard)
   return (
     <li className="tmpMainChart">
      

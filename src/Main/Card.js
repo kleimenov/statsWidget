@@ -1,9 +1,9 @@
 import React from "react";
 
-const Card = ({ dataElement, filterState, setFilterState }) => {
+const Card = ({ dataElement, setCard }) => {
   const clickHandler = (item) => {
-    setFilterState(true);
-    console.log("Xyi " + item);
+    setCard(item);
+    //console.log(item);
   };
 
   return (
