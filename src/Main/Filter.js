@@ -2,14 +2,19 @@ import React from "react";
 import Legend from "./Legend";
 import Cards from "./Cards";
 
-const Filter = (props) => {
+const Filter = ({ data }) => {
+  /*
+  data.gaugeData.map((currElement, index) => {
+    <Cards key={index} detaElement={currElement} />;
+  });
+*/
   return (
     <div>
       <Legend />
       <ul>
-        {props.data.map((item) => (
-          <Cards detaElement={item} />
-        ))}
+        {data.gaugeData.map((currElement, index) => 
+          <Cards key={index} detaElement={currElement} />
+        )}
       </ul>
     </div>
   );
@@ -18,9 +23,16 @@ const Filter = (props) => {
 export default Filter;
 
 /*
-<ul>
-        {props.data.map(item => (
-          <Cards detaElement={item}/>
-        ))}
+
+<Cards key={index} detaElement={ currElement } />
+return (
+    <div>
+      <Legend />
+      <ul>
+        {data.gaugeData.map((currElement, index) => {
+          <Cards key={index} detaElement={currElement} />;
+        })}
       </ul>
+    </div>
+  );
 */
