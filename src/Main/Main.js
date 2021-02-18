@@ -5,8 +5,8 @@ import Chart from './Chart'
 const Main = () => {
 
     return (
-        <div >
-            <h3>Main component</h3>
+        <div className="tmpMain">
+            <h3 className="tmpMainHeader">Main component</h3>
             <Filter />
             <Chart />
         </div>
