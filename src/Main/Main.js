@@ -4,9 +4,10 @@ import Chart from "./Chart";
 
 const Main = () => {
   //const [data, setData] = useState({ gaugeData: [], areaData: {} });
-  const [gaugeData, setGaugeData] = useState([]);
-  const [areaData, setAreaData] = useState([]);
   const [currentCard, setCard] = useState("Quality Score");
+  const [gaugeData, setGaugeData] = useState([]);
+  const [areaData, setAreaData] = useState({"Quality Score": []});
+  
 
   useEffect(() => {
     getData();

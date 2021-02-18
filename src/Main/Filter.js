@@ -4,6 +4,9 @@ import Card from "./Card";
 
 
 const Filter = ({ data, setCard }) => {
+  //console.log('filter')
+  //console.log(data)
+  
   return (
     <div className="tmpMain">
       <Legend />
@@ -17,3 +20,4 @@ const Filter = ({ data, setCard }) => {
 };
 
 export default Filter;
+
