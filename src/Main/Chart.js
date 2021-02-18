@@ -14,7 +14,7 @@ const Chart = ({ data, currentCard }) => {
 
       {data[currentCard].map((item, index) => (
         //<p>{item.date} ~ {item.score}</p>
-        <Areachart key={ index } dataElement={ item } />
+        <Areachart key={index} dataElement={item} />
       ))}
     </div>
   );
