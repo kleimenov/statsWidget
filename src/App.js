@@ -1,12 +1,12 @@
 import React from "react";
-import Main from './Main'
+import Main from './Main/Main'
 
 const App = () => {
   return (
     <div className="App">
       
-      <div className="contianer">
-        <h3>Hello assesment test</h3>
+      <div className="container">
+        <h3>App component</h3>
         <Main />
       </div>
 
