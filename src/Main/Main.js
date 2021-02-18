@@ -12,16 +12,15 @@ const Main = () => {
   const getData = async () => {
     const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change  it here
     const data = await response.json();
-    console.log(data)
     setData(data);
   };
 
-  console.log(data);
+ //console.log(data);
 
   return (
     <div className="tmpMain">
       <h3 className="tmpMainHeader">Main component</h3>
-      <Filter />
+      <Filter data={data}/>
       <Chart />
     </div>
   );
