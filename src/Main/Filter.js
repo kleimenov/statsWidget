@@ -1,6 +1,7 @@
 import React from "react";
 import Legend from "./Legend";
 import Cards from "./Cards";
+import Chart from './Chart'
 
 const Filter = ({ data }) => {
   /*
@@ -9,13 +10,14 @@ const Filter = ({ data }) => {
   });
 */
   return (
-    <div>
+    <div className="tmpMain">
       <Legend />
-      <ul>
+      <ul className="tmpFilter">
         {data.gaugeData.map((currElement, index) => 
           <Cards key={index} detaElement={currElement} />
         )}
       </ul>
+      <Chart />
     </div>
   );
 };

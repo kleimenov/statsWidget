@@ -24,11 +24,21 @@ code {
 .tempBcg {
   background-color: deepskyblue;
 }
-
 .tmpMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tmpFilter {
   border: 1px firebrick dotted;
 }
 
 .tmpMainHeader {
   text-align: center;
+}
+
+.tmpMainChart {
+  border: 1px blue dotted;
 }

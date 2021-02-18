@@ -20,10 +20,11 @@ const Main = () => {
   };
 
   return (
-    <div className="tmpMain">
+    <div>
       <h3 className="tmpMainHeader">Main component</h3>
-      <Filter data={ data } />
-      <Chart />
+      <div className="tmpMain">
+        <Filter data={data} />
+      </div>
     </div>
   );
 };

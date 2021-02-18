@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Chart = () => {
-    return (
-        <div>
-          
-        </div>
-    )
-}
+  return (
+  <div className="tmpMainChart">
+      Hello I'm chart
+  </div>
+  );
+};
 
-export default Chart
+export default Chart;
