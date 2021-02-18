@@ -4,7 +4,7 @@ import Areachart from "./Areachart";
 const Chart = ({ data, currentCard }) => {
   //console.log('chart')
   //console.log(data[currentCard]);
-  console.log(data)
+  //console.log(data)
 
   //data[currentCard]
 
