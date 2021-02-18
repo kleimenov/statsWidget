@@ -13,8 +13,14 @@ code {
 }
 
 .container {
-  /*padding-top: 15px;*/
   margin: 0 auto;
   width: 800px;
   min-height: calc(100vh - 143px);
+}
+
+
+/* ----------------- tmp classes -----------------*/
+
+.tempBcg {
+  background-color: deepskyblue;
 }

@@ -5,7 +5,7 @@ import Chart from './Chart'
 const Main = () => {
 
     return (
-        <div>
+        <div >
             <h3>Main component</h3>
             <Filter />
             <Chart />
