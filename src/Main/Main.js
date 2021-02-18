@@ -10,7 +10,7 @@ const Main = () => {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("http://localhost:8080/");
+    const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change  it here
     const data = await response.json();
     console.log(data)
     setData(data);
