@@ -1,10 +1,11 @@
 import React from "react";
 
 const Chart = () => {
+
   return (
-  <div className="tmpMainChart">
-      Hello I'm chart
-  </div>
+  <li className="tmpMainChart">
+
+  </li>
   );
 };
 

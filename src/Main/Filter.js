@@ -17,7 +17,10 @@ const Filter = ({ data }) => {
           <Cards key={index} detaElement={currElement} />
         )}
       </ul>
+      <ul>
+
       <Chart />
+      </ul>
     </div>
   );
 };
