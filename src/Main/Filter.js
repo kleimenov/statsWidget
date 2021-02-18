@@ -1,25 +1,17 @@
 import React from "react";
 import Legend from "./Legend";
-import Cards from "./Cards";
+import Card from "./Card";
 import Chart from './Chart'
 
-const Filter = ({ data }) => {
-  /*
-  data.gaugeData.map((currElement, index) => {
-    <Cards key={index} detaElement={currElement} />;
-  });
-*/
+const Filter = ({ data, filterState, setFilterState }) => {
+
   return (
     <div className="tmpMain">
       <Legend />
       <ul className="tmpFilter">
-        {data.gaugeData.map((currElement, index) => 
-          <Cards key={index} detaElement={currElement} />
+        {data.map((currElement, index) => 
+          <Card key={index} dataElement={currElement} filterState={filterState} setFilterState={setFilterState}/>
         )}
-      </ul>
-      <ul>
-
-      <Chart />
       </ul>
     </div>
   );
@@ -29,15 +21,22 @@ export default Filter;
 
 /*
 
-<Cards key={index} detaElement={ currElement } />
+<Card key={index} dataElement={ currElement } />
 return (
     <div>
       <Legend />
       <ul>
         {data.gaugeData.map((currElement, index) => {
-          <Cards key={index} detaElement={currElement} />;
+          <Card key={index} dataElement={currElement} />;
         })}
       </ul>
     </div>
   );
+
+
+   <ul>
+      {data.areaData.map((currElement, index) => 
+          <Chart key={index} dataElement={currElement} />
+        )}
+      </ul>
 */

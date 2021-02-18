@@ -1,11 +1,11 @@
 import React from "react";
 
-const Chart = () => {
+const Chart = ({ dataElement }) => {
 
   return (
-  <li className="tmpMainChart">
-
-  </li>
+    <li className="tmpMainChart">
+     
+    </li>
   );
 };
 
