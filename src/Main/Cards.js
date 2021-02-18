@@ -1,12 +1,11 @@
 import React from "react";
 
-const Cards = ( {detaElement} ) => {
-  
-  console.log(detaElement)
+const Cards = ({ detaElement }) => {
+  console.log(detaElement);
 
   return (
     <li>
-     {detaElement.name}/{detaElement.score}/{detaElement.sample}
+      {detaElement.name}/{detaElement.score}/{detaElement.sample}
     </li>
   );
 };
