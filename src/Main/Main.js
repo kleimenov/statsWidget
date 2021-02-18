@@ -6,13 +6,11 @@ const Main = () => {
   //const [data, setData] = useState({ gaugeData: [], areaData: {} });
   const [currentCard, setCard] = useState("Quality Score");
   const [gaugeData, setGaugeData] = useState([]);
-  const [areaData, setAreaData] = useState({"Quality Score": []});
-  
+  const [areaData, setAreaData] = useState({ "Quality Score": [] });
 
   useEffect(() => {
     getData();
   }, []);
-
 
   const getData = async () => {
     const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change  it here
