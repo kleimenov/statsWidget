@@ -8,9 +8,9 @@ const Filter = ({ data, setCard }) => {
   //console.log(data)
   
   return (
-    <div className="tmpMain">
+    <div>
       <Legend />
-      <ul className="tmpFilter">
+      <ul>
         {data.map((currElement, index) => (
           <Card key={index} dataElement={currElement} setCard={setCard} />
         ))}
