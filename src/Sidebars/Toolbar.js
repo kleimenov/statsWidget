@@ -6,7 +6,7 @@ const Toolbar = () => {
     <div className="toolbar-container">
       <ul className="tools-list">
         <li>
-          <FontAwesomeIcon icon={faMapPin} color="white" />
+          <FontAwesomeIcon icon={faMapPin} color="white"/>
         </li>
         <li>
           <FontAwesomeIcon icon={faChartLine} color="white" />

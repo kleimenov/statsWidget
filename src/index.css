@@ -17,15 +17,25 @@ code {
   height: 100vh;
 }
 
+.bg-grey {
+  padding: 10px;
+  background-color: rgb(237, 236, 236);
+}
+
+.icon-separator {
+  font-weight: 300;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
 .container {
   margin: 0 auto;
-  width: 800px;
-  min-height: calc(100vh - 143px);
+  width: 600px;
 }
 
 /* ----------------- tmp classes for Main component-----------------*/
 
-.tmpMain {
+.main-graphs-holder {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -36,8 +46,11 @@ code {
   border: 1px firebrick dotted;
 }
 
-.tmpMainHeader {
-  text-align: center;
+.main-title {
+  color: gray;
+  font-weight: 200;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .tmpMainChart {
@@ -69,7 +82,7 @@ code {
   margin: 0;
   padding: 0;
   color: white;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 .header-user-account {
@@ -88,7 +101,7 @@ code {
   padding: 0;
 }
 .header-icons li {
-  margin: 10px;
+  margin: 15px;
   padding: 0;
 }
 

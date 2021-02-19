@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import Filter from "./Filter";
 import Chart from "./Chart";
 
@@ -21,8 +23,16 @@ const Main = () => {
 
   return (
     <div>
-      <h3 className="tmpMainHeader">Main component</h3>
-      <div className="tmpMain">
+      <div className="container">
+        <h3 className="main-title">Performance management</h3>
+      </div>
+      <div className="bg-grey">
+        <div className="container">
+          <FontAwesomeIcon icon={faGlobe} size="lg"/> 
+          <span className="icon-separator">Diagnostic tool</span>
+        </div>
+      </div>
+      <div className="main-graphs-holder">
         <Filter data={gaugeData} setCard={setCard} />
         <Chart data={areaData} currentCard={currentCard} />
       </div>
