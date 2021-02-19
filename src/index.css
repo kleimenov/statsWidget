@@ -53,8 +53,10 @@ code {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  min-height: 30px;
-  margin-left: 30px;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  margin-left: 40px;
   background-color:rgb(17, 115, 194);
 }
 
@@ -63,7 +65,6 @@ code {
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  
 }
 
 .header-title {
@@ -85,16 +86,44 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  list-style: none;
 }
 
 
 /* ----------------- tmp classes for Side toolbar  component-----------------*/
 
-.Toolbar {
+.toolbar-container {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 30px;
+  width: 45px;
   background-color: rgb(5, 61, 111);
+}
+
+.tools-list {
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.tools-list li {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-top: 1px solid rgb(3, 46, 84);
+}
+
+.tools-list li svg {
+  margin: 0;
+  padding: 0;
+}
+
+.tools-list li:nth-of-type(4) {
+  background-color:  rgb(3, 46, 84);
+}
+
+.tools-list li:last-of-type {
+  border-bottom: 1px solid rgb(3, 46, 84);
 }

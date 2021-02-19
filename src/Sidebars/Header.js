@@ -1,4 +1,10 @@
 import React from "react";
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faFile, faOutdent } from '@fortawesome/free-solid-svg-icons'
+
+//library.add(faCoffee)
 
 const Header = () => {
   return (
@@ -7,11 +13,14 @@ const Header = () => {
       <div className="header-wrapper">
         <h6 className="header-user-account">Logged in as General User</h6>
         <ul className="header-icons">
-          <li>icon#1</li>
-          <li>icon#2</li>
-          <li>icon#3</li>
-          <li>icon#4</li>
-          <li>icon#5</li>
+          <li>
+          <FontAwesomeIcon icon={faOutdent} color="white"/>
+          </li>
+          <li><FontAwesomeIcon icon={faOutdent} color="white"/></li>
+          <li><FontAwesomeIcon icon={faOutdent} color="white"/></li>
+          <li><FontAwesomeIcon icon={faOutdent} color="white"/></li>
+          <li><FontAwesomeIcon icon={faFile} color="white"/></li>
+          
         </ul>
         </div>
     </div>

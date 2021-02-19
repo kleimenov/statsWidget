@@ -7,10 +7,10 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <Toolbar className="tempBcgToolbar" />
       <div className="container">
         <Main />
       </div>
-      <Toolbar className="tempBcgToolbar" />
     </div>
   );
 };
