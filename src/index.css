@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.App {
+  position: relative;
+  height: 100vh;
+}
+
 .container {
   margin: 0 auto;
   width: 800px;
@@ -43,13 +48,53 @@ code {
 
 /* ----------------- tmp classes for Header  component-----------------*/
 
-.tempBcg {
-  background-color: deepskyblue;
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  min-height: 30px;
+  margin-left: 30px;
+  background-color:rgb(17, 115, 194);
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.header-title {
+  margin: 0;
+  padding: 0;
+  color: white;
+  margin-left: 30px;
+
+}
+
+.header-user-account {
+  margin: 0;
+  padding: 0 5px;
+  color: rgb(118, 177, 220);
+  border-right: rgb(118, 177, 220) 1px solid ;
+}
+
+.header-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 
 /* ----------------- tmp classes for Side toolbar  component-----------------*/
 
-.tempBcgToolbar {
-  background-color: deepskyblue;
+.Toolbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background-color: rgb(5, 61, 111);
 }

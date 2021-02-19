@@ -2,8 +2,14 @@ import React from "react";
 
 const Toolbar = () => {
   return (
-    <div className="tempBcg">
-        <h4>This is Toolbar placeholder</h4>
+    <div className="Toolbar">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
     </div>
   );
 };
