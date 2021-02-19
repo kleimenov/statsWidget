@@ -12,8 +12,6 @@ const Chart = ({ data, currentCard }) => {
   const svg = d3.select(".graphHolder");
   //console.log(svg);
 
-  
-
   return (
     <div>
       <h5>{currentCard}</h5>
