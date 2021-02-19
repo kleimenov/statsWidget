@@ -28,6 +28,11 @@ code {
   margin-left: 15px;
 }
 
+.icon-pin {
+  
+  float: right;
+}
+
 .container {
   margin: 0 auto;
   width: 600px;
@@ -38,7 +43,7 @@ code {
 .main-graphs-holder {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
