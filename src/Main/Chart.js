@@ -13,9 +13,19 @@ const Chart = ({ data, currentCard }) => {
   //console.log(svg);
 
   return (
-    <div>
-      <h5>{currentCard}</h5>
-      <div className="graphHolder"></div>
+    <div className="chart-content-holder">
+      <div className="chart-legend-wrapper">
+        <h5 className="chart-title">{currentCard} TRAND</h5>
+        <ul className="chart-terms-wrapper">
+          <li>Day</li>
+          <li>Week</li>
+          <li>Month</li>
+          <li>Quarter</li>
+          <li>Half</li>
+          <li>Year</li>
+        </ul>
+      </div>
+      <div>Graph holder</div>
     </div>
   );
 };

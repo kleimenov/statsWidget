@@ -10,7 +10,7 @@ const Filter = ({ data, setCard }) => {
   return (
     <div>
       <Legend />
-      <ul>
+      <ul className="graph-cards-wrapper">
         {data.map((currElement, index) => (
           <Card key={index} dataElement={currElement} setCard={setCard} />
         ))}
