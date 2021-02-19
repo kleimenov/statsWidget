@@ -28,10 +28,10 @@ const Main = () => {
       </div>
       <div className="bg-grey">
         <div className="container">
-          <FontAwesomeIcon icon={faGlobe} size="lg" />
+          <FontAwesomeIcon icon={faGlobe} size="lg" color="gray"/>
           <span className="icon-separator">Diagnostic tool</span>
           <span className="icon-pin">
-            <FontAwesomeIcon icon={faMapPin} size="sm" />
+            <FontAwesomeIcon icon={faMapPin} size="sm" color="gray"/>
           </span>
         </div>
       </div>
