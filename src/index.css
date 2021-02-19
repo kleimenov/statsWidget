@@ -23,9 +23,7 @@ code {
   min-height: calc(100vh - 143px);
 }
 
-
 /* ----------------- tmp classes for Main component-----------------*/
-
 
 .tmpMain {
   display: flex;
@@ -57,7 +55,7 @@ code {
   padding: 0;
   height: 40px;
   margin-left: 40px;
-  background-color:rgb(17, 115, 194);
+  background-color: rgb(17, 115, 194);
 }
 
 .header-wrapper {
@@ -72,14 +70,13 @@ code {
   padding: 0;
   color: white;
   margin-left: 30px;
-
 }
 
 .header-user-account {
   margin: 0;
   padding: 0 5px;
   color: rgb(118, 177, 220);
-  border-right: rgb(118, 177, 220) 1px solid ;
+  border-right: rgb(118, 177, 220) 1px solid;
 }
 
 .header-icons {
@@ -87,8 +84,13 @@ code {
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
+.header-icons li {
+  margin: 10px;
+  padding: 0;
+}
 
 /* ----------------- tmp classes for Side toolbar  component-----------------*/
 
@@ -121,7 +123,7 @@ code {
 }
 
 .tools-list li:nth-of-type(4) {
-  background-color:  rgb(3, 46, 84);
+  background-color: rgb(3, 46, 84);
 }
 
 .tools-list li:last-of-type {
