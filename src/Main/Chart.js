@@ -15,7 +15,7 @@ const Chart = ({ data, currentCard }) => {
   return (
     <div className="chart-content-holder">
       <div className="chart-legend-wrapper">
-        <h5 className="chart-title">{currentCard} TRAND</h5>
+        <h5 className="chart-title">{currentCard} TREND</h5>
         <ul className="chart-terms-wrapper">
           <li>Day</li>
           <li>Week</li>
