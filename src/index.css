@@ -21,9 +21,7 @@ code {
 
 /* ----------------- tmp classes for Main component-----------------*/
 
-.tempBcg {
-  background-color: deepskyblue;
-}
+
 .tmpMain {
   display: flex;
   flex-direction: row;
@@ -41,4 +39,17 @@ code {
 
 .tmpMainChart {
   border: 1px blue dotted;
+}
+
+/* ----------------- tmp classes for Header  component-----------------*/
+
+.tempBcg {
+  background-color: deepskyblue;
+}
+
+
+/* ----------------- tmp classes for Side toolbar  component-----------------*/
+
+.tempBcgToolbar {
+  background-color: deepskyblue;
 }

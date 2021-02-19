@@ -10,7 +10,7 @@ const App = () => {
       <div className="container">
         <Main />
       </div>
-      <Toolbar />
+      <Toolbar className="tempBcgToolbar" />
     </div>
   );
 };
