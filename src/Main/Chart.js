@@ -24,7 +24,6 @@ const Chart = ({ data, currentCard }) => {
           <li>Year</li>
         </ul>
       </div>
-      <div>Graph holder</div>
       <Areachart data={data[currentCard]} />
     </div>
   );
