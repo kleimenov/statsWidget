@@ -5,7 +5,6 @@ import Filter from "./Filter";
 import Chart from "./Chart";
 
 const Main = () => {
-  //const [data, setData] = useState({ gaugeData: [], areaData: {} });
   const [currentCard, setCard] = useState("Quality Score");
   const [gaugeData, setGaugeData] = useState([]);
   const [areaData, setAreaData] = useState({ "Quality Score": [] });
@@ -15,7 +14,7 @@ const Main = () => {
   }, []);
 
   const getData = async () => {
-    const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change  it here
+    const response = await fetch("http://localhost:8080/"); //If you will use different PORT on server-side, don't forget to change it here
     const data = await response.json();
     setGaugeData(data.gaugeData);
     setAreaData(data.areaData);
@@ -28,10 +27,10 @@ const Main = () => {
       </div>
       <div className="bg-grey">
         <div className="container">
-          <FontAwesomeIcon icon={faGlobe} size="lg" color="gray"/>
+          <FontAwesomeIcon icon={faGlobe} size="lg" color="gray" />
           <span className="icon-separator">Diagnostic tool</span>
           <span className="icon-pin">
-            <FontAwesomeIcon icon={faMapPin} size="sm" color="gray"/>
+            <FontAwesomeIcon icon={faMapPin} size="sm" color="gray" />
           </span>
         </div>
       </div>

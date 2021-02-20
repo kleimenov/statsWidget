@@ -2,11 +2,7 @@ import React from "react";
 import Legend from "./Legend";
 import Card from "./Card";
 
-
 const Filter = ({ data, setCard }) => {
-  //console.log('filter')
-  //console.log(data)
-  
   return (
     <div>
       <Legend />
@@ -20,4 +16,3 @@ const Filter = ({ data, setCard }) => {
 };
 
 export default Filter;
-
