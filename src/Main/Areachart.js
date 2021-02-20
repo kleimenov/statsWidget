@@ -10,7 +10,7 @@ const Areachart = ({ data }) => {
       return monthDateFormat;
     }
 
-    var margin = { top: 60, right: 10, bottom: 10, left: 40 },
+    var margin = { top: 60, right: 10, bottom: 30, left: 40 },
       width = 420,
       height = 260;
 
@@ -95,6 +95,7 @@ const Areachart = ({ data }) => {
       .enter()
       .append("text")
       .attr("text-anchor", "top")
+      .attr("fill", "black")
       .attr("x", function (d, i) {
         return xScale(dataX[i]);
       })
