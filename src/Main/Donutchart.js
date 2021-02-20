@@ -4,8 +4,7 @@ import { svg } from "d3";
 import UseD3 from "./UseD3";
 
 const Donutchart = ({ score }) => {
-  //console.log(score)
-
+  
   const ref = UseD3(
     (svg) => {
       //console.log(score)
