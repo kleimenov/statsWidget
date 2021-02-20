@@ -6,7 +6,7 @@ import * as d3 from "d3";
 const Chart = ({ data, currentCard }) => {
   //console.log('chart')
   //console.log(data[currentCard]);
-  //console.log(data)
+  console.log(data)
   //data[currentCard]
 
   const svg = d3.select(".graphHolder");
@@ -26,6 +26,7 @@ const Chart = ({ data, currentCard }) => {
         </ul>
       </div>
       <div>Graph holder</div>
+      
     </div>
   );
 };
