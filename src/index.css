@@ -18,7 +18,6 @@ code {
 }
 
 .bg-grey {
-  
   padding: 10px;
   background-color: rgb(237, 236, 236);
 }
@@ -37,6 +36,11 @@ code {
 .container {
   margin: 0 auto;
   width: 960px;
+}
+
+.area {
+  height: 500px;
+  width: 500px;
 }
 
 /* ----------------- tmp classes for Main component-----------------*/
