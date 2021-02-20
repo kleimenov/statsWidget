@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import * as d3 from "d3";
-import { svg } from "d3";
+//import { svg } from "d3";
 import UseD3 from "./UseD3";
 
 const Donutchart = ({ score }) => {
-  
+
   const ref = UseD3(
     (svg) => {
       //console.log(score)

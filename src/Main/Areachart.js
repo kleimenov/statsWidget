@@ -1,13 +1,17 @@
 import React from "react";
-import * as d3 from "d3";
+import { svg } from "d3";
 
+const Areachart = ({ data }) => {
+  //console.log(data);
+  data.map((item) => console.log(item.score))
 
-const Areachart = ({ dataElement }) => {
-  //console.log(dataElement);
 
   return (
-   
-    <div></div>
+    <div>
+      {data.map((item, index) => 
+        <li>{item.date}/ {item.score}</li>
+      )}
+    </div>
   )
     
 };

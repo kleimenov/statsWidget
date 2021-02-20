@@ -1,16 +1,15 @@
 import React from "react";
 import * as d3 from "d3";
+import Areachart from "./Areachart";
 
 //import Areachart from "./Areachart";
 
 const Chart = ({ data, currentCard }) => {
   //console.log('chart')
   //console.log(data[currentCard]);
-  console.log(data)
-  //data[currentCard]
+  
 
-  const svg = d3.select(".graphHolder");
-  //console.log(svg);
+  
 
   return (
     <div className="chart-content-holder">
@@ -26,7 +25,7 @@ const Chart = ({ data, currentCard }) => {
         </ul>
       </div>
       <div>Graph holder</div>
-      
+      <Areachart data={data[currentCard]} />
     </div>
   );
 };
