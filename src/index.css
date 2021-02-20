@@ -259,22 +259,17 @@ code {
 
 .line {
   fill: none;
-  stroke: #ffab00;
+  stroke: #1b71b5;
   stroke-width: 3;
 }
 
-.overlay {
-fill: none;
-pointer-events: all;
+
+.area {
+  fill: url(#area-gradient);
 }
 
-/* Style the dots by assigning a fill and stroke */
 .dot {
-  fill: #ffab00;
+  fill: #1173c1;
   stroke: #fff;
-}
-
-.focus circle {
-fill: none;
-stroke: steelblue;
+  stroke-width: 3;
 }

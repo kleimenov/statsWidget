@@ -2,96 +2,122 @@ import React from "react";
 import * as d3 from "d3";
 import UseD3 from "./UseD3";
 
-
 const Areachart = ({ data }) => {
-
   const ref = UseD3((svg) => {
-
     let dataX = data.map((item) => getMonthFromString(item.date));
     function getMonthFromString(mon) {
       let monthDateFormat = new Date(Date.parse(mon + " 1, 2020"));
       return monthDateFormat;
     }
-    
-    var margin = { top: 10, right: 10, bottom: 10, left: 20 },
-      width = 420, // Use the window's width
-      height = 280; // Use the window's height
-    
-  
+
+    var margin = { top: 60, right: 10, bottom: 10, left: 40 },
+      width = 420,
+      height = 260;
+
     var n = data.length;
-    
-    
+
     var xScale = d3
       .scaleTime()
-      .domain([d3.min(dataX), d3.max(dataX)]) // input
-      .range([0, width]); // output
-    
-  
+      .domain([d3.min(dataX), d3.max(dataX)])
+      .range([0, width]);
+
     var yScale = d3
       .scaleLinear()
       .domain([
         d3.min(data.map((month) => month.score)),
         d3.max(data.map((month) => month.score)),
-      ]) // input
-      .range([height, 0]); // output
-    
-  
-    var line = d3
-      .line()
+      ])
+      .range([height, 0]);
+
+    var area = d3
+      .area()
       .x(function (d, i) {
         return xScale(dataX[i]);
-      }) 
+      })
+      .y0(height)
+      .y1(function (d) {
+        return yScale(d.y);
+      })
+      .curve(d3.curveMonotoneX);
+
+    var line = d3
+      .area()
+      .x(function (d, i) {
+        return xScale(dataX[i]);
+      })
       .y(function (d) {
         return yScale(d.y);
-      }) 
-      .curve(d3.curveMonotoneX); 
-    
-    
+      })
+      .curve(d3.curveMonotoneX);
+
     var dataset = d3.range(n).map(function (d, i) {
       return { y: data[i].score };
     });
-    
-    svg.selectAll("*").remove()
-   
+
+    svg.selectAll("*").remove();
+
     let g = svg
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    g
-      .append("g")
+    g.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(xScale).tickValues(dataX)); 
-    
-  
-    g.append("g").attr("class", "y axis").call(d3.axisLeft(yScale));
-    
-    g
-      .append("path")
-      .datum(dataset) 
-      .attr("class", "line") 
-      .attr("d", line); 
-    
-   
-    g
-      .selectAll(".dot")
+      .call(d3.axisBottom(xScale).tickValues(dataX));
+
+    g.append("path")
+      .datum(dataset)
+      .attr("class", "area")
+      .attr("d", area);
+
+    g.append("linearGradient")				
+      .attr("id", "area-gradient")			
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("gradientTransform", "rotate(90)")		
+      .selectAll("stop")						
+      .data([								
+        {offset: "0%", color: "#1b71b5"},		
+        {offset: "30%", color: "#b6d4ee"},	
+      ])					
+    .enter().append("stop")			
+      .attr("offset", function(d) { return d.offset; })	
+      .attr("stop-color", function(d) { return d.color; });
+
+    g.append("path")
+      .datum(dataset)
+      .attr("class", "line")
+      .attr("d", line);
+
+    g.selectAll(".dot")
       .data(dataset)
       .enter()
-      .append("circle") 
-      .attr("class", "dot") 
+      .append("text")
+      .attr("text-anchor", "top")
+      .attr("x", function (d, i) {
+        return xScale(dataX[i]);
+      })
+      .attr("y", function (d) {
+        return yScale(d.y + 3);
+      })
+      .text((d, i) => {
+        return data[i].score + "%";
+      });
+
+    g.selectAll(".dot")
+      .data(dataset)
+      .enter()
+      .append("circle")
+      .attr("class", "dot")
       .attr("cx", function (d, i) {
         return xScale(dataX[i]);
       })
       .attr("cy", function (d) {
         return yScale(d.y);
       })
-      .attr("r", 5)
-  })
-  
-  
+      .attr("r", 5);
+  });
 
   return (
     <div>
