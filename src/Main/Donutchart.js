@@ -25,7 +25,7 @@ const Donutchart = ({ score }) => {
           "d",
           d3
             .arc()
-            .innerRadius(10) // This is the size of the donut hole
+            .innerRadius(10) 
             .outerRadius(17)
         )
         .attr("fill", function (d, i) {

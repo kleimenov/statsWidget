@@ -6,6 +6,10 @@ const Areachart = ({ data }) => {
   //data.map((item) => console.log(item.score))
 
 
+
+  const color = d3.scaleOrdinal(["#1b71b5", "#b6d4ee"]);
+
+
   return (
     <div>
       {data.map((item, index) => 
