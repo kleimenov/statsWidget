@@ -13,7 +13,7 @@ const Areachart = ({ data }) => {
       return monthDateFormat;
     }
     
-    var margin = { top: 50, right: 10, bottom: 30, left: 60 },
+    var margin = { top: 10, right: 10, bottom: 10, left: 20 },
       width = 420, // Use the window's width
       height = 280; // Use the window's height
     
@@ -51,34 +51,32 @@ const Areachart = ({ data }) => {
       return { y: data[i].score };
     });
     
+    svg.selectAll("*").remove()
    
-     svg
-      .select(".area")
-      .append("svg")
+    let g = svg
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
     
-    svg.selectAll("*").remove()
 
-    svg
+    g
       .append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(xScale).tickValues(dataX)); 
     
   
-    svg.append("g").attr("class", "y axis").call(d3.axisLeft(yScale));
+    g.append("g").attr("class", "y axis").call(d3.axisLeft(yScale));
     
-    svg
+    g
       .append("path")
       .datum(dataset) 
       .attr("class", "line") 
       .attr("d", line); 
     
    
-    svg
+    g
       .selectAll(".dot")
       .data(dataset)
       .enter()
@@ -91,10 +89,6 @@ const Areachart = ({ data }) => {
         return yScale(d.y);
       })
       .attr("r", 5)
-      .on("mouseover", function (a, b, c) {
-        this.attr("class", "focus");
-      })
-      .on("mouseout", function () {});
   })
   
   
