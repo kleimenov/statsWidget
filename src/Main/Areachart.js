@@ -11,9 +11,9 @@ const Areachart = ({ data }) => {
       return monthDateFormat;
     }
 
-    var margin = { top: 80, right: 25, bottom: 30, left: 35 },
+    var margin = { top: 120, right: 25, bottom: 30, left: 35 },
       width = 410,
-      height = 200;
+      height = 150;
 
     var n = data.length;
 

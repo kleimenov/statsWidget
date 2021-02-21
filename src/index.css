@@ -143,6 +143,10 @@ code {
   margin: 5px;
 }
 
+.graph-sample {
+  color: rgb(162, 162, 161);
+}
+
 .chart-content-holder {
   width: 50%;
 }

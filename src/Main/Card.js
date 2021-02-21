@@ -32,7 +32,7 @@ const Card = ({ dataIndex, dataElement, setCard }) => {
           <span>{dataElement.score}</span>
           <span>NA</span>
         </div>
-        <span>{dataElement.sample}</span>
+        <span className="graph-sample">Sample: {dataElement.sample}</span>
       </div>
     </li>
   );
