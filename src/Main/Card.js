@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import * as d3 from "d3";
-import Donutchart from "./Donutchart"
+import Donutchart from "./Donutchart";
 
-const Card = ({ dataElement, setCard }) => {
-  
-  const clickHandler = (cardName) => {
+const Card = ({ dataIndex, dataElement, setCard }) => {
+
+  const clickHandler = (e, cardName) => {
+
     setCard(cardName);
+    
+    let currentActive = document.querySelector('.graph-card-checked');
+
+    if (currentActive) {
+      currentActive.classList.remove('graph-card-checked');
+      currentActive.querySelector('.graph-content path').setAttribute('fill', '#1170bd')
+    }
+
+    e.currentTarget.classList.add('graph-card-checked');
   };
 
-  let cardClassName = 'graph-card-'+dataElement.name.split(' ').join('')
-  
+  let active = !dataIndex;
+
   return (
-    <li className="graph-card" onClick={() => clickHandler(dataElement.name)}>
+    <li
+      className={`graph-card ${active ? "graph-card-checked" : ""}` }
+      onClick={(e) => clickHandler(e, dataElement.name)}
+    >
       <div className="graph-content">
         <span>{dataElement.name}</span>
-        <Donutchart score={dataElement.score} cardClass={cardClassName}/>
+        <Donutchart score={dataElement.score} active={active}/>
+        <div className="graph-score">
+          <span>{dataElement.score}</span>
+          <span>NA</span>
+        </div>
         <span>{dataElement.sample}</span>
       </div>
     </li>
@@ -22,7 +39,6 @@ const Card = ({ dataElement, setCard }) => {
 };
 
 export default Card;
-
 
 /*
 div className="graph-content">

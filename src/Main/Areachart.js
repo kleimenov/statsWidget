@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import UseD3 from "./UseD3";
 
 const Areachart = ({ data }) => {
+  
   const ref = UseD3((svg) => {
     let dataX = data.map((item) => getMonthFromString(item.date));
     function getMonthFromString(mon) {
@@ -10,16 +11,18 @@ const Areachart = ({ data }) => {
       return monthDateFormat;
     }
 
-    var margin = { top: 60, right: 10, bottom: 30, left: 40 },
-      width = 420,
-      height = 260;
+    var margin = { top: 80, right: 25, bottom: 30, left: 35 },
+      width = 410,
+      height = 200;
 
     var n = data.length;
 
     var xScale = d3
       .scaleTime()
       .domain([d3.min(dataX), d3.max(dataX)])
-      .range([0, width]);
+      .range([0, width])
+
+      
 
     var yScale = d3
       .scaleLinear()
@@ -64,8 +67,12 @@ const Areachart = ({ data }) => {
 
     g.append("g")
       .attr("class", "x axis")
+      .attr("class", "xLegend")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(xScale).tickValues(dataX));
+      .call(d3.axisBottom(xScale)
+      .tickValues(dataX)
+      );
+
 
     g.append("path")
       .datum(dataset)
@@ -96,6 +103,7 @@ const Areachart = ({ data }) => {
       .append("text")
       .attr("text-anchor", "top")
       .attr("fill", "black")
+      .attr("font-size", "12px")
       .attr("x", function (d, i) {
         return xScale(dataX[i]);
       })
@@ -117,7 +125,7 @@ const Areachart = ({ data }) => {
       .attr("cy", function (d) {
         return yScale(d.y);
       })
-      .attr("r", 5);
+      .attr("r", 6);
   });
 
   return (

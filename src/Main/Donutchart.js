@@ -4,12 +4,10 @@ import * as d3 from "d3";
 import UseD3 from "./UseD3";
 
 const Donutchart = ({ score }) => {
-
+  
   const ref = UseD3(
     (svg) => {
-      //console.log(score)
-      //Donut(score, cardClass)
-      const color = d3.scaleOrdinal(["#1dafec", "#d7d7d7"]);
+      const color = d3.scaleOrdinal(["#1170bd", "#d7d7d7"]);
       const data = [score, 100 - score];
       const pie = d3.pie();
 
@@ -21,13 +19,7 @@ const Donutchart = ({ score }) => {
         .enter()
         .append("path")
 
-        .attr(
-          "d",
-          d3
-            .arc()
-            .innerRadius(10) 
-            .outerRadius(17)
-        )
+        .attr("d", d3.arc().innerRadius(17).outerRadius(22))
         .attr("fill", function (d, i) {
           return color(i);
         })
