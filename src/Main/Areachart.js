@@ -3,7 +3,6 @@ import * as d3 from "d3";
 import UseD3 from "./UseD3";
 
 const Areachart = ({ data }) => {
-  
   const ref = UseD3((svg) => {
     let dataX = data.map((item) => getMonthFromString(item.date));
     function getMonthFromString(mon) {
@@ -11,20 +10,18 @@ const Areachart = ({ data }) => {
       return monthDateFormat;
     }
 
-    var margin = { top: 120, right: 25, bottom: 30, left: 35 },
+    const margin = { top: 120, right: 25, bottom: 30, left: 35 },
       width = 410,
       height = 150;
 
-    var n = data.length;
+    const n = data.length;
 
-    var xScale = d3
+    const xScale = d3
       .scaleTime()
       .domain([d3.min(dataX), d3.max(dataX)])
-      .range([0, width])
+      .range([0, width]);
 
-      
-
-    var yScale = d3
+    const yScale = d3
       .scaleLinear()
       .domain([
         d3.min(data.map((month) => month.score)),
@@ -32,7 +29,7 @@ const Areachart = ({ data }) => {
       ])
       .range([height, 0]);
 
-    var area = d3
+    const area = d3
       .area()
       .x(function (d, i) {
         return xScale(dataX[i]);
@@ -43,7 +40,7 @@ const Areachart = ({ data }) => {
       })
       .curve(d3.curveMonotoneX);
 
-    var line = d3
+    const line = d3
       .area()
       .x(function (d, i) {
         return xScale(dataX[i]);
@@ -53,7 +50,7 @@ const Areachart = ({ data }) => {
       })
       .curve(d3.curveMonotoneX);
 
-    var dataset = d3.range(n).map(function (d, i) {
+    const dataset = d3.range(n).map(function (d, i) {
       return { y: data[i].score };
     });
 
@@ -69,33 +66,29 @@ const Areachart = ({ data }) => {
       .attr("class", "x axis")
       .attr("class", "xLegend")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(xScale)
-      .tickValues(dataX)
-      );
+      .call(d3.axisBottom(xScale).tickValues(dataX));
 
+    g.append("path").datum(dataset).attr("class", "area").attr("d", area);
 
-    g.append("path")
-      .datum(dataset)
-      .attr("class", "area")
-      .attr("d", area);
-
-    g.append("linearGradient")				
-      .attr("id", "area-gradient")			
+    g.append("linearGradient")
+      .attr("id", "area-gradient")
       .attr("gradientUnits", "userSpaceOnUse")
-      .attr("gradientTransform", "rotate(90)")		
-      .selectAll("stop")						
-      .data([								
-        {offset: "0%", color: "#1b71b5"},		
-        {offset: "30%", color: "#b6d4ee"},	
-      ])					
-    .enter().append("stop")			
-      .attr("offset", function(d) { return d.offset; })	
-      .attr("stop-color", function(d) { return d.color; });
+      .attr("gradientTransform", "rotate(90)")
+      .selectAll("stop")
+      .data([
+        { offset: "0%", color: "#1b71b5" },
+        { offset: "30%", color: "#b6d4ee" },
+      ])
+      .enter()
+      .append("stop")
+      .attr("offset", function (d) {
+        return d.offset;
+      })
+      .attr("stop-color", function (d) {
+        return d.color;
+      });
 
-    g.append("path")
-      .datum(dataset)
-      .attr("class", "line")
-      .attr("d", line);
+    g.append("path").datum(dataset).attr("class", "line").attr("d", line);
 
     g.selectAll(".dot")
       .data(dataset)
@@ -108,7 +101,7 @@ const Areachart = ({ data }) => {
         return xScale(dataX[i]);
       })
       .attr("y", function (d) {
-        return yScale(d.y + 3);
+        return yScale(d.y + 5);
       })
       .text((d, i) => {
         return data[i].score + "%";

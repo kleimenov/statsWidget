@@ -7,6 +7,7 @@ import {
   faFileExport,
   faMapPin,
 } from "@fortawesome/free-solid-svg-icons";
+
 const Toolbar = () => {
   return (
     <div className="toolbar-container">

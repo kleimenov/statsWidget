@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as d3 from "d3";
-//import { svg } from "d3";
 import UseD3 from "./UseD3";
 
 const Donutchart = ({ score }) => {
-  
   const ref = UseD3(
     (svg) => {
       const color = d3.scaleOrdinal(["#1170bd", "#d7d7d7"]);
@@ -24,7 +22,6 @@ const Donutchart = ({ score }) => {
           return color(i);
         })
         .attr("transform", "translate(50, 50), scale(2)")
-        //.attr("stroke", "white")
         .style("opacity", 0.7);
     },
     [1]
