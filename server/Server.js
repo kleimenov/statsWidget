@@ -9,7 +9,7 @@ app.use(cors());
 
 const dataPath = path.join(__dirname, "data.json");
 
-app.get("/data", (req, res) => {
+app.get("/", (req, res) => {
   fs.readFile(dataPath, "utf8", (err, data) => {
     if (err) {
       throw err;
