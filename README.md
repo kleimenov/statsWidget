@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# statsWidget (statistics widget) 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is skills assessment project.
 
-## Available Scripts
+## Project description and structure.
 
 In the project directory, you can run:
 
