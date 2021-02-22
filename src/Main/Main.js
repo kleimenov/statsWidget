@@ -14,7 +14,7 @@ const Main = () => {
   }, []);
   
   const getData = async () => {
-    const response = await fetch("http://localhost:3030/"); //https://stats-widget.herokuapp.com// NOTIFICATION If you will use different PORT on server-side, don't forget to change it here
+    const response = await fetch("http://localhost:3030/"); 
     const data = await response.json();
     setGaugeData(data.gaugeData);
     setAreaData(data.areaData);
