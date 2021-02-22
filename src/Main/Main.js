@@ -12,9 +12,9 @@ const Main = () => {
   useEffect(() => {
     getData();
   }, []);
-
+  
   const getData = async () => {
-    const response = await fetch("https://stats-widget.herokuapp.com/"); // http://localhost:3030/ NOTIFICATION If you will use different PORT on server-side, don't forget to change it here
+    const response = await fetch("http://localhost:3030/data"); //https://stats-widget.herokuapp.com// NOTIFICATION If you will use different PORT on server-side, don't forget to change it here
     const data = await response.json();
     setGaugeData(data.gaugeData);
     setAreaData(data.areaData);
