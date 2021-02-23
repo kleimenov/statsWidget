@@ -1,5 +1,6 @@
 ## statsWidget (statistics widget) 
 This is skills assessment project.
+UPD: project deployed on Heroku: [Statswidget](https://statswidget.herokuapp.com)
 
 ### Project description and structure.
 For this project I use REN + d3.js stack (`React`, `Express.js`, `Node.js`).
@@ -10,21 +11,17 @@ Server side implemented on Express.js (Node.js).
 Run `npm install` from the project folder.
 
 #### Please before you start React App, start data server.
-Start App CLI command `npm start` from the project folder
-Start Server CLI command `node Server.js` from ./server folder
+Start App CLI command `npm start` from /client/src folder.
+Start Server CLI command `node Server.js` from the project folder.
 
 ### Directory tree representation
 ```
 statsWidget
-├── public
-│   └── index.html
-|
-├── server
-|   ├── data.json
-|   └── Server.js
-|
-├── src
-|   └── main
+├── client
+|   ├── public
+│   |   └── index.html
+|   ├── src
+|   └── Main
 |   |   ├── Areachart.js
 |   |   ├── Card.js
 |   |   ├── Chart.js
@@ -40,7 +37,15 @@ statsWidget
 |   |
 |   ├── App.js
 |   ├── index.css
-|   └── index.js
+|   ├── index.js
+|   |
+|   └── package.json.
+|
+├── data.json
+|
+├──Server.js
+|
+├──README.md
 |
 └── package.json
 ```
